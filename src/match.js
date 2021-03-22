@@ -19,19 +19,19 @@ export default (search, path, r) => {
   // -- /xx/**/yy/zz/**
   // -> /xx/aa/bb/yy/zz/cc/dd
   let pathData = path.split('/'),
-      searchData = search.split('/'),
-      pathDataLength = pathData.length,
-      searchDataLength = searchData.length,
-      c = pathDataLength > searchDataLength ? pathDataLength : searchDataLength,
-      oo = false,
-      aa = false,
-      match = false
+    searchData = search.split('/'),
+    pathDataLength = pathData.length,
+    searchDataLength = searchData.length,
+    c = pathDataLength > searchDataLength ? pathDataLength : searchDataLength,
+    oo = false,
+    aa = false,
+    match = false
   ;
   //iterate over the length of either pathDataLength or searchDataLength
   for (let i = 1, so = 1; i < c; i++, so++) {
     if (typeof pathData[i] == 'undefined') {
       if (match !== false) {
-        return false
+        return false;
       } else if (typeof searchData[so] == 'undefined') {
         return true;
       } else if (aa === false && oo === false && searchData[so] != '?' && searchData[so] != '??') {
@@ -88,4 +88,4 @@ export default (search, path, r) => {
     }
   }
   return match === false || oo;
-}
+};

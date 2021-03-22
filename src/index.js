@@ -27,5 +27,5 @@ router.prototype.dispatch = function (pathname) {
 
 export {
   match
-}
+};
 export default router;
